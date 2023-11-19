@@ -140,7 +140,7 @@ function oceanparallax(e){
 
   let scroll = scrollTop();
 
-  let oppose = [[0.01,0, 20, 19], [-0.01,0, 20, 4], [0.015,0, 19]];
+  let oppose = [[0.01,0, 20, 19], [-0.01,0, 19], [0.015,0, 19]];
 
   for(var i = 0; i < oppose.length; i++){
 
