@@ -95,17 +95,20 @@
   width: 100vw;
   z-index: -3;
   top: -1vw;
+  position: absolute;
 }
 
 .sky{
   width: 100vw;
   z-index: -4;
+  position: absolute;
 }
 
 
 .oceanview{
   position: absolute;
   transition: transform 0.5s;
+  will-change: transform;
 }
 
 #aboutsection{
@@ -120,15 +123,11 @@
   margin-left: auto;
   margin-right: auto;
   left: calc(43vw/2);
-  backdrop-filter: blur(0.5vw);
   padding: 3vw;
-  background: rgba(255,255,255,0.2);
-  border: solid 0.375vw rgba(255,255,255,0.2);
-  box-shadow: 0px 0px 5vw black;
   border-radius: 3vw;
 }
 
-#aboutauthor > h1{
+#authortitle{
   text-align: center;
   font-size: 6vw;
   color: white;
@@ -138,7 +137,7 @@
   margin-top: 0px;
 }
 
-#aboutauthor > .occupation{
+#occupation{
   font-size: 2.5vw;
   font-family: Arial;
   color: white;
@@ -148,7 +147,7 @@
   margin-bottom: 0px;
 }
 
-#aboutauthor > .description{
+#description{
   font-size: 2vw;
   font-family: Arial;
   color: white;
@@ -161,7 +160,7 @@
   margin-right: 0.7vw;
 }
 
-#aboutauthor > .contacts{
+#contacts{
   display: flex;
   justify-content: space-between;
   width: 25.5vw;
@@ -169,22 +168,23 @@
   margin-right: auto;
 }
 
-.projecttitle{
+#projecttitle{
   position: relative;
   margin-top: 2vw;
   left: 50vw;
   transition: transform 1.5s;
+  will-change: transform;
   width: 0vw;
 }
 
-.projecttitle > #subimage{
+#subimage{
 
   width: 40vw;
   top: 0vw;
 
 }
 
-.projecttitle > #propeller{
+#propeller{
 
   width: 10vw;
   position: absolute;
@@ -194,14 +194,10 @@
 
 }
 
-.projecttitle > p{
+#projecttitletext{
   position: absolute;
   top: 14vw;
   left: 5vw;
-  backdrop-filter: blur(0.25vw);
-  background: rgba(255,255,255,0.2);
-  border: solid 0.25vw rgba(255,255,255,0.2);
-  box-shadow: 0px 0px 5vw black;
   border-radius: 2vw;
   font-size: 5vw;
   font-family: arial;
@@ -241,12 +237,15 @@ a:hover{
   margin: 1vw;
   overflow: hidden;
   position: relative;
-  backdrop-filter: blur(0.25vw);
-  background: rgba(255,255,255,0.2);
-  border: solid 0.25vw rgba(255,255,255,0.2);
-  box-shadow: 0px 0px 5vw black;
   border-radius: 2vw;
   transition: box-shadow 0.5s;
+}
+
+.glass{
+  border: solid 0.25vw rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(0.25vw);
+  box-shadow: 0px 0px 5vw black;
 }
 
 .project:hover{
@@ -254,7 +253,7 @@ a:hover{
   box-shadow: 0px 0px 5vw white;
 }
 
-.project > .title{
+.projtitle{
   font-size: 3vw;
   text-align: center;
   font-family: Arial;
@@ -263,7 +262,7 @@ a:hover{
   margin-bottom: 0vw;
 }
 
-.project > .projdescription{
+.projdescription{
   font-size: 2vw;
   font-family: Arial;
   margin-left: 2.5vw;
@@ -273,7 +272,7 @@ a:hover{
   text-shadow: 0px 0px 0.75vw black;
 }
 
-.project > img{
+.projimage{
   width: 100%;
   opacity: 0.1;
   position: absolute;
@@ -283,14 +282,14 @@ a:hover{
   pointer-events: none;
 }
 
-.contacts > img{
+.contactimage{
   width: 12vw;
   border-radius: 1vw;
   box-shadow: 0 0 2vw black;
   transition: box-shadow 0.1s;
 }
 
-.contacts > img:hover{
+.contactimage:hover{
   box-shadow: 0 0 2vw darkblue;
   cursor: pointer;
 }
@@ -299,6 +298,10 @@ a:hover{
   position: relative;
   height: 80vw;
   overflow: hidden;
+}
+
+.cave{
+  will-change: transform;
 }
 
 #cave1{
@@ -364,14 +367,12 @@ a:hover{
   width: 20vw;
 }
 
-@keyframes BubbleMoveUp {
+@keyframes fadeIn {
   0%{
     opacity: 0;
-    top: 40vw
   },
   100%{
     opacity: 1;
-    top: 0vw;
   },
 }
 
@@ -389,11 +390,6 @@ a:hover{
   transition: transform 0.5s;
   opacity: 0.2;
 
-
-  backdrop-filter: blur(0.25vw);
-  background: rgba(255,255,255,0.2);
-  border: solid 0.25vw rgba(255,255,255,0.2);
-  box-shadow: 0px 0px 5vw black;
   border-radius: 2vw;
   font-size: 5vw;
   font-family: arial;
@@ -436,7 +432,7 @@ html{
   transition: opacity 1s;
 }
 
-#loading > p{
+#loadingtext{
   font-size: 10vw;
   font-family: Arial;
   position: relative;
@@ -445,7 +441,7 @@ html{
   opacity: 0.3;
   animation: LoadingText 3s ease-in-out infinite;
   top: 50vh;
-  transform: translate(0, -5vw);
+  transform: translate3d(0, -5vw, 0);
   margin-left: auto;
   margin-right: auto;
   width: 50vw;
@@ -463,14 +459,6 @@ html{
   }
 }
 
-#loading > img{
-  opacity: 0.3;
-  position: absolute;
-  left: 40vw;
-  width: 20vw;
-  top: 50vh;
-}
-
 body{
   margin: 0;
   background-color: #002661;
@@ -483,12 +471,11 @@ body{
 @keyframes MoveUpDownKelp {
   0%, 100% {
     transform-origin: bottom left;
-    transform: rotate(1deg);
-    rotate: 1deg;
+    transform: rotate3d(0, 0, 1, 1deg);
   }
   50% {
     transform-origin: bottom left;
-    transform: rotate(-1deg);
+    transform: rotate3d(0, 0, 1, -1deg);
   }
 }
 
@@ -511,11 +498,11 @@ body{
     width: 80vw;
   }
 
-  #aboutauthor > .occupation{
+  #occupation{
     font-size: 4.5vw !important;
   }
 
-  #aboutauthor > .description{
+  #description{
     font-size: 3.5vw !important;
     width: 80vw;
   }
@@ -531,11 +518,11 @@ body{
   }
 
 
-  .project > .title{
+  .projtitle{
     font-size: 5vw !important;
   }
 
-  .project > .projdescription{
+  .projdescription{
     font-size: 3.5vw !important;
   }
 

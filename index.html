@@ -14,7 +14,7 @@
 
   <div id="loading">
 
-    <p>Loading...</p>
+    <p id="loadingtext">Loading...</p>
 
   </div>
 
@@ -32,8 +32,8 @@
     <img src="images/Ocean1r.webp" id="ocean1" class="oceanview ocean1">
     <img src="images/Ocean2r.webp" id="ocean2" class="oceanview ocean2">
     <img src="images/Ocean3r.webp" id="ocean3" class="oceanview ocean3">
-    <img src="images/sun.png" class="oceanview sun">
-    <img src="images/sky2.jpg" id = "skybackground" class="oceanview sky">
+    <img src="images/sun.png" class="sun">
+    <img src="images/sky2.jpg" id = "skybackground" class="sky">
   </div>
 
 
@@ -42,14 +42,14 @@
 
   <div id="aboutsection">
 
-    <div id="aboutauthor">
+    <div id="aboutauthor" class="glass">
       <h1 id="authortitle">Ritik Jalisatgi</h1>
-      <p class="occupation">Computer Scientist & Web Developer</p>
-      <p class="description">Hello! I'm a 17 year old from Sunnyvale, CA interested in web-development. You can find other projects I've created <a href="https://github.com/warpromo">here</a>, and my resume <a href="Ritik Jalisatgi.pdf">here</a>. Looking forward to meeting new people, so feel free to contact me! :)</p>
-      <div class="contacts">
+      <p id="occupation">Computer Scientist & Web Developer</p>
+      <p id="description">Hello! I'm a 17 year old from Sunnyvale, CA interested in web-development. You can find other projects I've created <a href="https://github.com/warpromo">here</a>, and my resume <a href="Ritik Jalisatgi.pdf">here</a>. Looking forward to meeting new people, so feel free to contact me! :)</p>
+      <div id="contacts">
 
-        <img src="images/github.png" onclick="openUrl('https://github.com/warpromo')">
-        <img src="images/linkedin.png" onclick="openUrl('https://linkedin.com/in/ritik-jalisatgi')">
+        <img class="contactimage" src="images/github.png" onclick="openUrl('https://github.com/warpromo')">
+        <img class="contactimage" src="images/linkedin.png" onclick="openUrl('https://linkedin.com/in/ritik-jalisatgi')">
 
       </div>
     </div>
@@ -61,10 +61,10 @@
       <img src="images/kelp4.png" id="kelp14" class="kelp1"></img>
     </div>
 
-    <div class="projecttitle">
+    <div id="projecttitle">
       <img id="subimage" src="images/submarine.svg">
       <img id="propeller" src="images/propeller.png">
-      <p>Projects</p>
+      <p class="glass" id="projecttitletext">Projects</p>
     </div>
 
     <div id="kelps2">
@@ -76,34 +76,34 @@
 
     <div id="projects">
 
-      <div class="project" onclick="openUrl('https://projectclassy.live')">
-        <p class="title">Classy</p>
+      <div class="project glass" onclick="openUrl('https://projectclassy.live')">
+        <p class="projtitle">Classy</p>
         <p class="projdescription">A <a>resource</a> for students to learn about school courses</p>
-        <img src="images/classydemo.png"></img>
+        <img class="projimage" src="images/classydemo.png"></img>
       </div>
 
-      <div class="project" onclick="openUrl('https://theiaproject.org')">
-        <p class="title">Theia</p>
+      <div class="project glass" onclick="openUrl('https://theiaproject.org')">
+        <p class="projtitle">Theia</p>
         <p class="projdescription">A <a>device</a> that helps blind individuals learn their environment</p>
-        <img src="images/theiademo.png"></img>
+        <img class="projimage" src="images/theiademo.png"></img>
       </div>
 
-      <div class="project" onclick="openUrl('https://warpromo.github.io/soromath')">
-        <p class="title">Soromath</p>
+      <div class="project glass" onclick="openUrl('https://warpromo.github.io/soromath')">
+        <p class="projtitle">Soromath</p>
         <p class="projdescription">A <a>website</a> for helping you train your mental math skills</p>
-        <img src="images/soromathdemo.png"></img>
+        <img class="projimage" src="images/soromathdemo.png"></img>
       </div>
 
-      <div class="project" onclick="openUrl('https://warpromo.github.io/typiebara')">
-        <p class="title">Typiebara</p>
+      <div class="project glass" onclick="openUrl('https://warpromo.github.io/typiebara')">
+        <p class="projtitle">Typiebara</p>
         <p class="projdescription">A <a>game</a> where you have to type fast to run away from monsters!</p>
-        <img src="images/typiebarademo.png"></img>
+        <img class="projimage" src="images/typiebarademo.png"></img>
       </div>
 
-      <div class="project" onclick="openUrl('https://warpromo.github.io/gokube')">
-        <p class="title">Gokube</p>
+      <div class="project glass" onclick="openUrl('https://warpromo.github.io/gokube')">
+        <p class="projtitle">Gokube</p>
         <p class="projdescription">A <a>game</a> where you have to reach the very top, don't fall down...</p>
-        <img src="images/gokubedemo.png"></img>
+        <img class="projimage" src="images/gokubedemo.png"></img>
       </div>
 
     </div>
@@ -115,7 +115,7 @@
         <img src="images/cave3.webp" class="cave" id="cave3"></img>
         <img src="images/cave4.webp" class="cave" id="cave4"></img>
         <img src="images/cave5.webp" class="cave" id="cave5"></img>
-        <p id="cavetext">Thanks for visiting!</p>
+        <p id="cavetext" class="glass">Thanks for visiting!</p>
       </div>
     </div>
 

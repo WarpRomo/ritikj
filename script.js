@@ -8,7 +8,7 @@ function scroll(e){
 
   if(aspectratio > 7/9){
     oceanparallax(e);
-    skybackgroundparallax(e);
+    //skybackgroundparallax(e);
     cloudparallax(e);
     submarineparallax(e);
     caveparallax(e);
@@ -19,7 +19,9 @@ function scroll(e){
 let aspectratio = null;
 let pageLoaded = false;
 
-function bodyload(){
+async function bodyload(){
+
+  console.log("loaded");
 
   oceans.push(document.getElementById("ocean1"));
   oceans.push(document.getElementById("ocean2"));
@@ -45,7 +47,11 @@ function bodyload(){
     loading.style.opacity = 0;
     pageLoaded = true;
 
-  }, 2000)
+    setTimeout(() => {
+      loading.remove();
+    }, 1000)
+
+  }, 1500)
 
 }
 
@@ -93,15 +99,36 @@ function caveparallax(e){
 
   for(var i = 0; i < oppose.length; i++){
 
+    if(i != oppose.length-1 && !onscreen(caves[i], 0)) continue;
+
     let movementY = oppose[i] * scrollAdjust;
 
-    caves[i].style.transform = `translate(0vw, ${movementY}vw)`
+    caves[i].style.transform = `translate3d(0vw, ${movementY}vw, 0vw)`
 
 
   }
 
 
 }
+
+function onscreen(e, leeWay = 1/6){
+
+  let scroll = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+  const rect = e.getBoundingClientRect();
+
+  let eTop = rect.top;
+  let eBottom = rect.top + rect.height;
+
+  let top = scroll;
+  let bottom = scroll + window.innerHeight;
+
+  leeWay *= window.innerHeight;
+
+  return ((rect.top+rect.height+leeWay) > 0 && rect.top-leeWay < window.innerHeight)
+
+}
+
 
 function openUrl(url){
   window.open(url, '_blank');
@@ -113,12 +140,15 @@ function submarineparallax(e){
   let rotspeed = 1;
 
   let scroll = scrollTop();
-  let sub = document.getElementsByClassName("projecttitle")[0];
+  let sub = document.getElementById("projecttitle");
+
+  if(!onscreen(sub)) return;
+
   let propeller = document.getElementById("propeller");
   let scrollAdjust = Math.max(-(getOffset(sub).top-windowHeight()), 0);
   let movementX = (scrollAdjust * oppose) + "vw";
 
-  sub.style.transform = `translate(${movementX}, 0vw)`
+  sub.style.transform = `translate3d(${movementX}, 0vw, 0vw)`
   propeller.style.rotate = (rotspeed * scroll) + "deg"
 
 }
@@ -131,10 +161,12 @@ function cloudparallax(e){
 
   for(var i = 0; i < oppose.length; i++){
 
+    if(!onscreen(clouds[i])) continue;
+
     let movementY = oppose[i][1]*scroll + "vw";
     let movementX = oppose[i][0]*scroll + "vw";
 
-    clouds[i].style.transform = `translate(${movementX}, ${movementY})`
+    clouds[i].style.transform = `translate3d(${movementX}, ${movementY}, 0vw)`
 
   }
 
@@ -148,13 +180,15 @@ function oceanparallax(e){
 
   for(var i = 0; i < oppose.length; i++){
 
+    if(!onscreen(oceans[i], 0)) continue;
+
     let movementX = oppose[i][0]*scroll;
 
     if(Math.abs(movementX) > oppose[i][2] ){
       movementX *= oppose[i][2] / Math.abs(movementX);
     }
 
-    oceans[i].style.transform = `translate(${movementX}vw, 0vw)`
+    oceans[i].style.transform = `translate3d(${movementX}vw, 0vw, 0vw)`
 
   }
 
