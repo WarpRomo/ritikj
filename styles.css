@@ -116,12 +116,12 @@
 
 #aboutauthor{
   width: 100vw;
-  width: 65vw;
+  width: 50vw;
   margin-left: auto;
   margin-right: auto;
-  left: calc(24vw/2);
+  left: calc(43vw/2);
   backdrop-filter: blur(0.5vw);
-  padding: 5vw;
+  padding: 3vw;
   background: rgba(255,255,255,0.2);
   border: solid 0.375vw rgba(255,255,255,0.2);
   box-shadow: 0px 0px 5vw black;
@@ -130,7 +130,7 @@
 
 #aboutauthor > h1{
   text-align: center;
-  font-size: 10vw;
+  font-size: 6vw;
   color: white;
   font-family: Arial;
   text-shadow: 0px 0px 5vw black;
@@ -139,7 +139,7 @@
 }
 
 #aboutauthor > .occupation{
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-family: Arial;
   color: white;
   text-align: center;
@@ -157,7 +157,8 @@
   margin-bottom: 3vw;
   margin-left: auto;
   margin-right: auto;
-  width: 60vw;
+  margin-left: 0.7vw;
+  margin-right: 0.7vw;
 }
 
 #aboutauthor > .contacts{
