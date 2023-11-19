@@ -12,8 +12,6 @@ function scroll(e){
     caveparallax(e);
   }
 
-  console.log(aspectratio);
-
 }
 
 let aspectratio = null;
@@ -40,10 +38,8 @@ function bodyload(){
 
     let loading = document.getElementById("loading");
     let html = document.body.parentElement
-    console.log(html);
     html.style.overflowY = "scroll";
     loading.style.opacity = 0;
-    console.log("DONE");
 
   }, 2000)
 
@@ -144,14 +140,17 @@ function oceanparallax(e){
 
   let scroll = scrollTop();
 
-  let oppose = [[0.01,0], [-0.01,0], [0.015,0]];
+  let oppose = [[0.01,0, 20, 19], [-0.01,0, 20, 4], [0.015,0, 19]];
 
   for(var i = 0; i < oppose.length; i++){
 
-    let movementY = oppose[i][1]*scroll + "vw";
-    let movementX = oppose[i][0]*scroll + "vw";
+    let movementX = oppose[i][0]*scroll;
 
-    oceans[i].style.transform = `translate(${movementX}, ${movementY})`
+    if(Math.abs(movementX) > oppose[i][2] ){
+      movementX *= oppose[i][2] / Math.abs(movementX);
+    }
+
+    oceans[i].style.transform = `translate(${movementX}vw, 0vw)`
 
   }
 
