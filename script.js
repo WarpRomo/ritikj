@@ -2,6 +2,8 @@ addEventListener("scroll", scroll)
 
 function scroll(e){
 
+  if(!pageLoaded) return;
+
   aspectratio = window.innerWidth / window.innerHeight;
 
   if(aspectratio > 7/9){
@@ -15,6 +17,7 @@ function scroll(e){
 }
 
 let aspectratio = null;
+let pageLoaded = false;
 
 function bodyload(){
 
@@ -40,6 +43,7 @@ function bodyload(){
     let html = document.body.parentElement
     html.style.overflowY = "scroll";
     loading.style.opacity = 0;
+    pageLoaded = true;
 
   }, 2000)
 
