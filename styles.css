@@ -216,6 +216,8 @@
 a{
   color: lightblue;
   transition: background 0.3s;
+  border-radius: 0.25vw;
+  padding: 0.1vw;
 }
 
 a:hover{
