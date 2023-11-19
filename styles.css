@@ -418,6 +418,7 @@ a:hover{
 }
 
 html{
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 
@@ -427,18 +428,44 @@ html{
   position: fixed;
   z-index: 2;
   pointer-events: none;
-  animation: fadeIn 1s linear forwards;
+  background: #000031;
+  transition: opacity 1s;
 }
 
-@keyframes fadeIn {
-  0%{
-    backdrop-filter: blur(0.5vw);
-  },
-  100%{
-    backdrop-filter: blur(0vw);
-  },
+#loading > p{
+  font-size: 10vw;
+  font-family: Arial;
+  position: relative;
+  margin-top: 0;
+  color: white;
+  opacity: 0.3;
+  animation: LoadingText 3s ease-in-out infinite;
+  top: 50vh;
+  transform: translate(0, -5vw);
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  text-align: center;
+  border-radius: 2vw;
+  padding: 1vw;
 }
 
+@keyframes LoadingText {
+  0%, 100% {
+    box-shadow: 0vw 0vw 5vw white;
+  }
+  50% {
+    box-shadow: 0vw 0vw 2vw white;
+  }
+}
+
+#loading > img{
+  opacity: 0.3;
+  position: absolute;
+  left: 40vw;
+  width: 20vw;
+  top: 50vh;
+}
 
 body{
   margin: 0;
@@ -446,7 +473,6 @@ body{
   background-size: 100vw;
   background-image: url("images/backgroundTile.svg");
   width: 100vw;
-
   overflow-x: hidden;
 }
 

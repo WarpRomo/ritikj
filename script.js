@@ -36,6 +36,17 @@ function bodyload(){
 
   aspectratio = window.innerWidth / window.innerHeight
 
+  setTimeout(() => {
+
+    let loading = document.getElementById("loading");
+    let html = document.body.parentElement
+    console.log(html);
+    html.style.overflowY = "scroll";
+    loading.style.opacity = 0;
+    console.log("DONE");
+
+  }, 2000)
+
 }
 
 let oceans = [];
