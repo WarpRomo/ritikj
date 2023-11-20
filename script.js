@@ -131,7 +131,7 @@ function onscreen(e, leeWay = 1/6){
 
 
 function openUrl(url){
-  window.open(url, '_blank');
+  window.open(url);
 }
 
 function submarineparallax(e){
