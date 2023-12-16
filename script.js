@@ -14,6 +14,8 @@ function scroll(e){
     caveparallax(e);
   }
 
+  //rotateprojects();
+
 }
 
 let aspectratio = null;
@@ -39,6 +41,8 @@ async function bodyload(){
 
   aspectratio = window.innerWidth / window.innerHeight
 
+  rotateprojects();
+
   setTimeout(() => {
 
     let loading = document.getElementById("loading");
@@ -54,6 +58,19 @@ async function bodyload(){
   }, 1500)
 
 }
+
+function rotateprojects(){
+
+  let elements = document.getElementsByClassName("project");
+  //let v = 0;
+  for(e of elements){
+      e.style.transform = `rotate(${5*Math.random()-2.5/**(2*(v%2 - 0.5))*/}deg)`
+      //v++;
+  }
+  console.log(elements);
+
+}
+
 
 let oceans = [];
 let clouds = [];

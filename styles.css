@@ -239,7 +239,7 @@
   overflow: hidden;
   position: relative;
   border-radius: 2vw;
-  transition: box-shadow 0.5s;
+  transition: all 0.5s;
 }
 
 .glass{
