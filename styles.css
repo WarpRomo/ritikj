@@ -162,7 +162,7 @@
 
 #contacts{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 25.5vw;
   margin-left: auto;
   margin-right: auto;
@@ -283,7 +283,7 @@
 }
 
 .contactimage{
-  width: 12vw;
+  height: 12vw;
   border-radius: 1vw;
   box-shadow: 0 0 2vw black;
   transition: box-shadow 0.1s;
